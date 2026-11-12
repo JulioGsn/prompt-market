@@ -1,0 +1,27 @@
+<% content_for :title, "#{@product.title} | Prompt Store" %>
+
+<div class="page-shell">
+  <header class="site-header">
+    <%= link_to "Prompt Store", root_path, class: "brand" %>
+    <span class="status">saldo: <%= @balance %> créditos</span>
+  </header>
+
+  <main class="product-detail">
+    <p class="eyebrow">Detalhes do produto</p>
+    <h1><%= @product.title %></h1>
+    <p class="intro"><%= @product.description %></p>
+    <p class="detail-price"><%= @product.price %> créditos</p>
+
+    <% if @acquired %>
+      <section class="prompt-content" aria-labelledby="content-title">
+        <h2 id="content-title">Conteúdo completo</h2>
+        <p><%= @product.content %></p>
+      </section>
+    <% else %>
+      <p class="access-note">O conteúdo completo será liberado após a aquisição.</p>
+      <%= button_to "Adquirir por #{@product.price} créditos", purchase_product_path(@product), method: :post, class: "purchase-button" %>
+    <% end %>
+
+    <%= link_to "Voltar ao catálogo", products_path, class: "back-link" %>
+  </main>
+</div>

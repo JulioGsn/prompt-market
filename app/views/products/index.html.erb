@@ -1,0 +1,31 @@
+<% content_for :title, "Catálogo | Prompt Store" %>
+
+<div class="page-shell">
+  <header class="site-header">
+    <%= link_to "Prompt Store", root_path, class: "brand" %>
+    <span class="status">saldo: <%= @balance %> créditos</span>
+  </header>
+
+  <main>
+    <section class="catalog-intro" aria-labelledby="catalog-title">
+      <p class="eyebrow">Prompts digitais</p>
+      <h1 id="catalog-title">Escolha uma ferramenta para o próximo trabalho.</h1>
+      <p class="intro">
+        Cada prompt tem uma descrição pública e um conteúdo completo que será liberado após a aquisição.
+      </p>
+    </section>
+
+    <section class="product-grid" aria-label="Produtos disponíveis">
+      <% @products.each do |product| %>
+        <article class="product-card">
+          <div>
+            <p class="product-price"><%= product.price %> créditos</p>
+            <h2><%= link_to product.title, product_path(product.id) %></h2>
+            <p><%= product.description %></p>
+          </div>
+          <%= link_to "Ver detalhes", product_path(product.id), class: "product-link" %>
+        </article>
+      <% end %>
+    </section>
+  </main>
+</div>

@@ -1,0 +1,228 @@
+:root {
+  --ink: #18232b;
+  --muted: #617078;
+  --paper: #f7f3eb;
+  --card: #fffdf8;
+  --accent: #e66c45;
+  --line: #e4ddd1;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.flash {
+  width: min(100% - 2rem, 68rem);
+  margin: 1rem auto 0;
+  padding: 0.8rem 1rem;
+  border-radius: 0.5rem;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.9rem;
+}
+
+.flash-notice {
+  color: #1f5b3a;
+  background: #e5f3e9;
+}
+
+.flash-alert {
+  color: #8a3b2b;
+  background: #fce8e2;
+}
+
+.page-shell {
+  width: min(100% - 2rem, 68rem);
+  margin: 0 auto;
+  padding: 1.5rem 0 4rem;
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.5rem 0;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+}
+
+.brand {
+  color: var(--ink);
+  font-size: 0.95rem;
+  font-weight: 750;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.status {
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.eyebrow {
+  margin: 0 0 1.5rem;
+  color: var(--accent);
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 750;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+h1 {
+  max-width: 18ch;
+  margin: 0;
+  font-size: clamp(2.6rem, 7vw, 5.5rem);
+  font-weight: 400;
+  letter-spacing: -0.07em;
+  line-height: 0.9;
+}
+
+.intro {
+  max-width: 35rem;
+  margin: 2rem 0 0;
+  color: var(--muted);
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  line-height: 1.55;
+}
+
+.catalog-intro {
+  max-width: 52rem;
+  padding: 5rem 0 3rem;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  padding-bottom: 4rem;
+}
+
+.product-card {
+  display: flex;
+  min-height: 17rem;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  background: var(--card);
+}
+
+.product-card h2 {
+  margin: 0.75rem 0;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.05;
+}
+
+.product-card h2 a {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.product-card p:not(.product-price) {
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.product-price,
+.detail-price {
+  margin: 0;
+  color: var(--accent);
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 750;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.product-link,
+.back-link {
+  color: var(--ink);
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.product-detail {
+  max-width: 52rem;
+  padding: 7rem 0;
+}
+
+.access-note {
+  width: fit-content;
+  margin-top: 2.5rem;
+  padding: 0.8rem 1rem;
+  border-left: 3px solid var(--accent);
+  color: var(--muted);
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.9rem;
+}
+
+.purchase-button {
+  margin-top: 1rem;
+  padding: 0.8rem 1rem;
+  border: 0;
+  border-radius: 999px;
+  color: #fffdf8;
+  background: var(--accent);
+  cursor: pointer;
+  font: 700 0.85rem ui-sans-serif, system-ui, sans-serif;
+}
+
+.prompt-content {
+  margin: 2.5rem 0 1.5rem;
+  padding: 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  background: var(--card);
+}
+
+.prompt-content h2 {
+  margin-top: 0;
+  font-size: 1.2rem;
+}
+
+.prompt-content p {
+  line-height: 1.65;
+  white-space: pre-wrap;
+}
+
+.technology-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 3rem;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.78rem;
+}
+
+.technology-list span {
+  padding: 0.55rem 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+}
+
+@media (max-width: 38rem) {
+  .status {
+    display: none;
+  }
+
+  .catalog-intro,
+  .product-detail {
+    padding: 3rem 0 2rem;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,23 @@
+[
+  {
+    "id": "analise-de-requisitos",
+    "title": "Análise de requisitos",
+    "description": "Ajuda a transformar uma ideia inicial em requisitos claros, perguntas abertas e critérios de aceitação.",
+    "content": "Atue como um analista de requisitos experiente. A partir do contexto fornecido, identifique atores, problema, objetivo, requisitos funcionais, requisitos não funcionais, não objetivos, riscos e critérios de aceitação.",
+    "price": 25
+  },
+  {
+    "id": "revisao-de-codigo",
+    "title": "Revisão de código",
+    "description": "Estrutura uma revisão de código orientada a bugs, riscos, regressões e testes ausentes.",
+    "content": "Atue como um revisor de código rigoroso e pragmático. Analise o código fornecido priorizando bugs, riscos de segurança, regressões, problemas de manutenção e lacunas de testes. Explique cada achado com evidência.",
+    "price": 35
+  },
+  {
+    "id": "plano-de-estudos",
+    "title": "Plano de estudos",
+    "description": "Organiza um objetivo de aprendizagem em etapas pequenas, verificáveis e adaptadas ao contexto informado.",
+    "content": "Atue como um orientador de aprendizagem. Transforme o objetivo fornecido em um plano incremental com conceitos, exercícios práticos, critérios de progresso, riscos de abandono e uma forma de revisar o aprendizado.",
+    "price": 20
+  }
+]
