@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Composição da VPS Hetzner</title>
+  <desc id="desc">Componentes dentro de uma VPS de 1 GB, com Caddy, Rails, SQLite, volume e backup externo.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#d65f3d"/></marker>
+    <style>
+      .bg { fill: #f5f1e8; }
+      .title { fill: #17252c; font: 700 32px ui-sans-serif, system-ui, sans-serif; }
+      .subtitle { fill: #5f7076; font: 16px ui-sans-serif, system-ui, sans-serif; }
+      .label { fill: #17252c; font: 700 18px ui-sans-serif, system-ui, sans-serif; }
+      .small { fill: #5f7076; font: 14px ui-sans-serif, system-ui, sans-serif; }
+      .server { fill: #203a43; stroke: #203a43; stroke-width: 3; }
+      .box { fill: #fffdf8; stroke: #cfc4b5; stroke-width: 2; }
+      .accent { fill: #f5ddd4; stroke: #d65f3d; stroke-width: 2; }
+      .line { stroke: #d65f3d; stroke-width: 3; fill: none; marker-end: url(#arrow); }
+      .dashed { stroke: #8a9a9e; stroke-width: 2; stroke-dasharray: 8 7; fill: none; marker-end: url(#arrow); }
+      .white { fill: #fffdf8; font: 700 20px ui-sans-serif, system-ui, sans-serif; }
+    </style>
+  </defs>
+  <rect class="bg" width="1200" height="760"/>
+  <text class="title" x="70" y="70">VPS Hetzner · MVP privado</text>
+  <text class="subtitle" x="70" y="102">Poucos processos, volume persistente e nenhuma compilação no servidor.</text>
+
+  <rect class="server" x="240" y="150" width="720" height="475" rx="24"/>
+  <text class="white" x="600" y="195" text-anchor="middle">Servidor Linux · 1 GB RAM</text>
+  <text x="600" y="222" text-anchor="middle" fill="#b9c8c9" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14">firewall: SSH, HTTP e HTTPS</text>
+
+  <rect class="box" x="300" y="260" width="600" height="90" rx="14"/>
+  <text class="label" x="600" y="297" text-anchor="middle">Caddy</text>
+  <text class="small" x="600" y="323" text-anchor="middle">porta 80/443 · certificado TLS · reverse proxy</text>
+
+  <rect class="accent" x="300" y="385" width="600" height="105" rx="14"/>
+  <text class="label" x="600" y="425" text-anchor="middle">Container Prompt Store</text>
+  <text class="small" x="600" y="451" text-anchor="middle">Rails · Puma · Basic Auth · health checks</text>
+  <text class="small" x="600" y="473" text-anchor="middle">usuário não-root · imagem do GHCR</text>
+
+  <rect class="box" x="300" y="525" width="285" height="65" rx="12"/>
+  <text class="label" x="442" y="552" text-anchor="middle">Volume SQLite</text>
+  <text class="small" x="442" y="574" text-anchor="middle">/rails/storage</text>
+
+  <rect class="box" x="615" y="525" width="285" height="65" rx="12"/>
+  <text class="label" x="757" y="552" text-anchor="middle">Logs stdout</text>
+  <text class="small" x="757" y="574" text-anchor="middle">JSON + rotação</text>
+
+  <rect class="box" x="40" y="315" width="145" height="100" rx="14"/>
+  <text class="label" x="112" y="352" text-anchor="middle">Internet</text>
+  <text class="small" x="112" y="378" text-anchor="middle">domínio</text>
+  <text class="small" x="112" y="398" text-anchor="middle">HTTPS</text>
+
+  <rect class="box" x="1010" y="315" width="145" height="100" rx="14"/>
+  <text class="label" x="1082" y="352" text-anchor="middle">Backup</text>
+  <text class="small" x="1082" y="378" text-anchor="middle">storage externo</text>
+  <text class="small" x="1082" y="398" text-anchor="middle">fora da VPS</text>
+
+  <path class="line" d="M185 365 H240"/>
+  <path class="line" d="M960 365 H1010"/>
+  <path class="dashed" d="M600 490 V525"/>
+  <text class="small" x="70" y="690">A VPS não compila a aplicação. O CI constrói a imagem; o servidor baixa e executa.</text>
+</svg>

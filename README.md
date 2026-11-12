@@ -391,3 +391,9 @@ A primeira interface usa views server-side do Rails e CSS local. Isso mantém o 
 Uma apresentação HTML autocontida explica o produto, as tecnologias, as fases de engenharia, as waves executadas, as decisões e os aprendizados:
 
 [Abrir apresentação](docs/apresentacao.html)
+
+Diagramas da arquitetura:
+
+- [Arquitetura geral](docs/diagramas/arquitetura-geral.svg)
+- [Pipeline CI/CD](docs/diagramas/pipeline-ci-cd.svg)
+- [Composição da VPS](docs/diagramas/vps-hetzner.svg)
