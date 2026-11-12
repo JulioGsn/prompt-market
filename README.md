@@ -309,11 +309,16 @@ O MVP agora é privado em produção com Basic Auth, CSP e headers de segurança
 
 ### Wave 7: Container e deploy
 
-Próxima:
+Wave 7A concluída:
 
-- criar imagem Docker mínima e executar como usuário não-root;
-- persistir o volume SQLite;
-- preparar schema e seeds no procedimento de deploy;
+- imagem Docker multi-stage criada;
+- processo executado como usuário não-root;
+- volume SQLite persistente configurado;
+- schema e seeds preparados pelo entrypoint;
+- health check do Compose configurado;
+
+Próxima etapa, Wave 7B:
+
 - configurar Caddy, domínio e HTTPS;
 - configurar secrets sem versioná-los;
 - definir backup, restauração, rollback e monitoramento externo.
@@ -328,6 +333,26 @@ Próxima:
 - decidir retenção de logs, alertas e dashboard de métricas;
 - manter `/metrics` restrito à rede ou autenticação operacional;
 - testar rollback e restauração antes de considerar o deploy concluído.
+
+Para executar a Wave 7A localmente, defina credenciais temporárias e execute:
+
+```bash
+SECRET_KEY_BASE=local-container-secret \
+PROMPT_STORE_USERNAME=operator \
+PROMPT_STORE_PASSWORD=local-password \
+docker compose up --build
+```
+
+O site ficará em `http://127.0.0.1:3000/` e exigirá Basic Auth. O health check pode ser consultado em `http://127.0.0.1:3000/health/live`.
+
+Para parar os serviços sem remover o volume SQLite:
+
+```bash
+SECRET_KEY_BASE=local-container-secret \
+PROMPT_STORE_USERNAME=operator \
+PROMPT_STORE_PASSWORD=local-password \
+docker compose down
+```
 
 ## Execução local
 
@@ -360,3 +385,9 @@ bin/bundler-audit
 ## Camada visual inicial
 
 A primeira interface usa views server-side do Rails e CSS local. Isso mantém o frontend no mesmo projeto e evita uma cadeia de build JavaScript enquanto o domínio ainda está sendo construído. Hotwire poderá ser avaliado quando houver uma interação real que justifique atualizações parciais de páginas.
+
+## Apresentação do projeto
+
+Uma apresentação HTML autocontida explica o produto, as tecnologias, as fases de engenharia, as waves executadas, as decisões e os aprendizados:
+
+[Abrir apresentação](docs/apresentacao.html)

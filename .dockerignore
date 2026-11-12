@@ -1,0 +1,14 @@
+.git
+.github
+.bundle
+vendor/bundle
+log/*
+tmp/*
+storage/*
+public/assets
+target
+.env
+.env.*
+!.env.example
+config/master.key
+config/credentials/*.key

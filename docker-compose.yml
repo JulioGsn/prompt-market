@@ -1,0 +1,24 @@
+services:
+  app:
+    build:
+      context: .
+      args:
+        RUBY_VERSION: 3.4.10
+    environment:
+      RAILS_ENV: production
+      SECRET_KEY_BASE: ${SECRET_KEY_BASE:?set SECRET_KEY_BASE before starting}
+      PROMPT_STORE_USERNAME: ${PROMPT_STORE_USERNAME:?set PROMPT_STORE_USERNAME before starting}
+      PROMPT_STORE_PASSWORD: ${PROMPT_STORE_PASSWORD:?set PROMPT_STORE_PASSWORD before starting}
+    ports:
+      - "3000:3000"
+    volumes:
+      - prompt_store_storage:/rails/storage
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "--silent", "http://127.0.0.1:3000/health/live"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+      start_period: 10s
+
+volumes:
+  prompt_store_storage:

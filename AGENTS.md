@@ -170,6 +170,7 @@ Estas decisões são a referência atual e podem mudar quando novas informaçõe
 | A Wave 4 usa store SQLite com Active Record | Mantém saldo e aquisições após reinício sem serviço separado | Uma instância e baixo volume são limites aceitos no MVP |
 | A Wave 5 usa observabilidade interna | Cria logs, métricas e health checks sem plataforma externa | Métricas reiniciam com o processo e endpoints ainda precisam de proteção |
 | A Wave 6 mantém o MVP privado em produção | Evita expor uma conta compartilhada antes de implementar identidade | Basic Auth é temporário e TLS/deploy ainda precisam ser configurados |
+| A Wave 7A usa Docker Compose local | Reproduz a execução e preserva SQLite em volume antes da VPS | HTTPS, backup externo e rollback ficam para a Wave 7B |
 
 Mudanças nessas decisões devem ser registradas com contexto, alternativas, decisão nova e impacto.
 
@@ -348,3 +349,18 @@ O HTML deve ser autocontido, sem depender de serviços externos para sua apresen
 ## Regra final
 
 Nunca adicionar uma tecnologia apenas para marcar uma caixa de seleção. Cada ferramenta, padrão ou etapa deve responder a uma necessidade do produto, a um risco real ou a um objetivo explícito de aprendizagem.
+
+
+## Communication rules
+
+- Prioritize information that affects my decisions.
+- Do not narrate routine tool calls.
+- Report only meaningful milestones and blockers.
+- Final response:
+  - Status: DONE / PARTIAL / BLOCKED
+  - Changed: one sentence
+  - Verification: tests and results
+  - Attention: risks or decisions requiring me
+- Keep summaries under 100 words when practical.
+- Never hide errors or skipped tests.
+- Provide detailed reasoning and logs on request.
